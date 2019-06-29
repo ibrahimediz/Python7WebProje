@@ -1,6 +1,11 @@
 <html>
 <body>
-    <p>Merhaba!</p>
-    <p>Çalışıyor!</p>
+{% for gonderi in Gonderiler %}
+    <p>
+    <h1>{{ gonderi.baslik }}</h1>
+    <p>
+    {{ gonderi.yazi }}
+{% endfor %}
+
 </body>
 </html>
