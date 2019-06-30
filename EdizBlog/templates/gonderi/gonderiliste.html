@@ -1,10 +1,15 @@
 <html>
 <body>
-{% for gonderi in Gonderiler %}
-    <p>
-    <h1>{{ gonderi.baslik }}</h1>
-    <p>
-    {{ gonderi.yazi }}
+<div>
+    <h1><a href="/">Ediz Blog</a></h1>
+</div>
+
+{% for Gonderi in Gonderiler %}
+    <div>
+        <p>Yayımlanma: {{ Gonderi.yayim_zamani }}</p>
+        <h1><a href="">{{ Gonderi.baslik }}</a></h1>
+        <p>{{ Gonderi.yazi|linebreaksbr }}</p>
+    </div>
 {% endfor %}
 
 </body>
