@@ -1,16 +1,12 @@
-<html>
-<body>
-<div>
-    <h1><a href="/">Ediz Blog</a></h1>
-</div>
-
+{% extends 'gonderi/base.html' %}
+{% block title %} Gönderi Detay Listesi {% endblock %}
+{% block content %}
 {% for Gonderi in Gonderiler %}
     <div>
         <p>Yayımlanma: {{ Gonderi.yayim_zamani }}</p>
-        <h1><a href="">{{ Gonderi.baslik }}</a></h1>
+        <h1><a href="{% url 'gonderi_detay' pk=Gonderi.pk %}">{{ Gonderi.baslik }}</a></h1>
+        
         <p>{{ Gonderi.yazi|linebreaksbr }}</p>
     </div>
 {% endfor %}
-
-</body>
-</html>
+{% endblock %}

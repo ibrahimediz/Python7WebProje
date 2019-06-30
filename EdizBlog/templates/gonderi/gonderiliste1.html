@@ -1,0 +1,11 @@
+{% extends 'gonderi/base.html' %}
+{% block title %} Gönderi Başlık Listesi {% endblock %}
+{% block content %}
+{% for Gonderi in Gonderiler %}
+    <div>
+
+        <h1><a href="">{{ Gonderi.baslik }}</a></h1>
+        
+    </div>
+{% endfor %}
+{% endblock %}

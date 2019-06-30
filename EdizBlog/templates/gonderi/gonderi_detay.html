@@ -1,0 +1,13 @@
+{% extends 'gonderi/base.html' %}
+{% block title %} Gönderi Detayi {% endblock %}
+{% block content %}
+    <div>
+
+        <h1><a class="btn btn-default" href="{% url 'gonderiduzenle' pk=Gonderi.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></h1>
+        <h1>{{ Gonderi.baslik }}</h1>
+        <br>
+        <br>
+        {{ Gonderi.yazi }}
+    </div>
+
+{% endblock %}
