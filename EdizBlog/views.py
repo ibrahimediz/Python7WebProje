@@ -18,9 +18,9 @@ def yeni_gonderi(request):
         form = PostForm(request.POST)
         if form.is_valid():
             gonderi = form.save(commit=False)
-            kullanici = User.objects.get(username="edizadmin")
-            # gonderi.yazar = request.user
-            gonderi.yazar = kullanici
+            # kullanici = User.objects.get(username="edizadmin")
+            gonderi.yazar = request.user
+            # gonderi.yazar = kullanici
             gonderi.yayim_zaman = timezone.now()
             gonderi.save()
             return redirect('gonderi_detay', pk=gonderi.pk)
@@ -34,9 +34,9 @@ def gonderiduzenle(request, pk):
         form = PostForm(request.POST, instance=gonderi)
         if form.is_valid():
             gonderi = form.save(commit=False)
-            kullanici = User.objects.get(username="edizadmin")
-            # gonderi.yazar = request.user
-            gonderi.yazar = kullanici
+            # kullanici = User.objects.get(username="edizadmin")
+            gonderi.yazar = request.user
+            # gonderi.yazar = kullanici
             gonderi.yayim_zaman = timezone.now()
             gonderi.save()
             return redirect('gonderi_liste')
